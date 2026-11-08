@@ -1,0 +1,642 @@
+{
+  "document": {
+    "title": "Hasan Bin Ali — Portfolio Website Master Blueprint",
+    "version": "1.0",
+    "date": "2026-10-30",
+    "purpose": "Editable master specification.",
+    "editing_note": "অনিশ্চিত তথ্য অনুমান করে পূরণ করব না; TODO লিখব। যেটা প্রয়োজন হলে চেঞ্জ করা যেতে পারে বা এড করা যেতে পারে সেটা appropriate লিখব"
+  },
+  "project": {
+    "name": "Hasan Bin Ali",
+    "domain": "hasanbinali.com",
+    "type": "Cinematic Editorial Portfolio",
+    "roles": [
+      "Video Editor",
+      "Cinematographer",
+      "Visual Storyteller",
+      {"appropriate": "Studio Management"},
+    ],
+    "audience": [
+      "বাংলাদেশের ক্লায়েন্ট",
+      "বাংলাভাষী ব্যক্তি ও প্রতিষ্ঠান",
+      "Islamic-focused organizations",
+      "English-speaking international clients"
+    ],
+    "goal": "কাজের মান, visual taste, storytelling এবং professional credibility তুলে ধরা; দর্শককে project দেখা ও যোগাযোগ করতে উৎসাহিত করা।",
+    "experience_display": "4 Years",
+    "experience_note": "২০২৩–২০২৬ সময়সীমা অনুযায়ী; jan or feb 2023। প্রয়োজনে 'Since 2023' ব্যবহার করা যাবে।",
+    "project_count_display": "50+ {appropriate: impactful}, Projects",
+    "organization": "Soo many, noteable Haddasana — ATN Bangla, BRB, MIBD",
+    "email": "mail@hasanbinali.com",
+    "location": "Hatirjhil,mahanagar, rampura, Dhaka, Bangladesh"
+  },
+  "technical_decisions": {
+    "architecture": "Lightweight multi-page PHP website with progressive enhancement",
+    "html": {
+      "use": true,
+      "where": "প্রতিটি পেজের semantic structure, headings, navigation, buttons, links, forms, project cards ও accessible content markup।"
+    },
+    "css": {
+      "use": true,
+      "approach": "নিজস্ব Custom CSS; utility framework বাধ্যতামূলক নয়।",
+      "where": "সব visual design, responsive layout, typography, spacing, Transparent glass effect like Apple ui, hover states, transitions ও অধিকাংশ animation।",
+      "main_file": "assets/css/style.css",
+      "optional_files": [
+        "assets/css/components.css",
+        "assets/css/responsive.css"
+      ],
+      "note": "প্রথমে একটি style.css দিয়েই শুরু করা যাবে; ফাইল বড় হলে ভাগ করা হবে।"
+    },
+    "javascript": {
+      "use": true,
+      "approach": "Vanilla JavaScript; React/Vue বা frontend framework নয়।",
+      "where": [
+        "Instant Bengali/English language switch",
+        "Project category filtering",
+        "Custom cursor and cursor states",
+        "Scroll reveal using Intersection Observer",
+        "Creative and Goodlooking Gallery & lightbox",
+        "Click-to-load YouTube/Drive embeds",
+        "Small interaction feedback",
+        "Optional lightweight page transition enhancement"
+      ],
+      "files": [
+        "assets/js/main.js",
+        "assets/js/language.js",
+        "assets/js/animations.js",
+        "assets/js/portfolio.js",
+        "assets/js/gallery.js",
+        "assets/js/video-embed.js"
+      ],
+      "rules": [
+        "ছোট ও প্রয়োজনভিত্তিক script",
+        "সম্ভব হলে defer দিয়ে load",
+        "মূল content JavaScript ছাড়া-ও পড়া যাবে",
+        "prefers-reduced-motion সম্মান করতে হবে",
+        "Touch/mobile device-এ custom cursor বন্ধ থাকবে"
+      ]
+    },
+    "php": {
+      "use": true,
+      "approach": "Minimal server-side PHP; reusable templates ও JSON data render করার জন্য।",
+      "where": [
+        "Shared header, navigation ও footer",
+        "Reusable project card component",
+        "Project listing ও individual project detail template",
+        "JSON file পড়ে content render করা",
+        "প্রয়োজনে secure contact form handling"
+      ],
+      "not_for": [
+        "জটিল backend application",
+        "User account system",
+        "অপ্রয়োজনীয় API layer",
+        "CMS/admin panel — ভবিষ্যতে প্রয়োজন হলে বিবেচনা"
+      ]
+    },
+    "json": {
+      "use": true,
+      "where": [
+        "data/translations.json — বাংলা/ইংরেজি interface text",
+        "data/projects.json — project metadata, category, media ID, description",
+        "data/gallery.json — image path, caption, alt text"
+      ]
+    },
+    "tailwind": {
+      "required": false,
+      "decision": "প্রথম পছন্দ Custom CSS। Tailwind নিলে locally compile করতে হবে; production-এ CDN runtime নয়।"
+    },
+    "libraries_and_frameworks": {
+      "avoid_initially": [
+        "React",
+        "Next.js",
+        "Vue",
+        "jQuery",
+        "Three.js",
+        "large UI libraries",
+        "heavy animation libraries"
+      ],
+      "gsap": "প্রথমে নয়; CSS/Vanilla JS দিয়ে নির্দিষ্ট জটিল animation করা না গেলে তবেই বিবেচনা।",
+      "three_js": "3D প্রয়োজন নেই, তাই ব্যবহার নয়।"
+    }
+  },
+  "language": {
+    "languages": [
+      "bn",
+      "en"
+    ],
+    "default": "bn",
+    "switch_ui": "Navigation bar-এ compact animated toggle/segmented glassmorphism switch",
+    "behavior": "একই পেজে instant text change; full page reload নয়।",
+    "remember_choice": "localStorage",
+    "translation_file": "data/translations.json",
+    "requirements": [
+      "প্রয়োজনীয় content দুই ভাষায় থাকবে",
+      "Client name ও original video title অকারণে translate করা হবে না। যেসব ক্ষেত্রে অনুবাদ বাজে দেখায় বা অনুবাদ না হলেই ভালো হয় সেগুলো ইংলিশে থাকবে ",
+      "Switch করলে document lang attribute-ও update হবে",
+      "JavaScript বন্ধ থাকলে default Bengali content এবং normal page navigation কাজ করবে"
+    ],
+    "future_seo": "ভবিষ্যতে আলাদা ভাষার SEO দরকার হলে /bn/ ও /en/ URL, hreflang এবং canonical যোগ করা যাবে; initial version-এ আবশ্যক নয়।"
+  },
+  "design_system": {
+    "direction": "Cinematic Editorial Portfolio",
+    "mood": [
+      "Cinematic",
+      "Minimal",
+      "Confident",
+      "Editorial",
+      "Professional",
+      "Purposeful"
+    ],
+    "colors": {
+      "background": "#0A0A0A",
+      "surface": "#111318",
+      "accent": "#0085FF",
+      "text_primary": "#E0E2EC",
+      "text_secondary": "#9298A5",
+      "border": "rgba(255,255,255,0.10)",
+      "overlay": "rgba(0,0,0,0.55)"
+    },
+    "fonts": {
+      "english": "Inter or similar clean sans-serif",
+      "bengali": "Hind Siliguri or Noto Sans Bengali",
+      "delivery": "লাইসেন্স ও performance উপযোগী WOFF2 locally host করা"
+    },
+    "visual_rules": [
+      "বড় editorial headline ও পরিষ্কার typography hierarchy",
+      "পর্যাপ্ত negative space",
+      "প্রজেক্টের thumbnail বড় ও media-led হবে",
+      "Subtle blue glow; অতিরিক্ত neon নয়",
+      "Dark surfaces ও restrained glassmorphism",
+      "Generic stock portrait ব্যবহার নয়"
+      "ইউ আই এর জন্য মিনিমাল এবং মডার্ন লুকিং স্টাইল ফলো করা যেতে পারে। অতিরিক্ত এআই লুকিং আইকন বা এআই বিল্ড করা এমন যেন মনে হয় না হয়"
+
+    ],
+    "hero_image": {
+      "initial": "Cinematic Working With Camera rig or cinematic portrait-led hero",
+      //"future": "নিজের cinematic portrait অথবা camera হাতে কাজ করার ছবি যুক্ত করা",
+      //"implementation": "Hero layout-এ image slot প্রস্তুত থাকবে; ছবি না থাকলেও layout সম্পূর্ণ দেখাবে।"
+    }
+  },
+  "navigation": {
+    "desktop": {
+      "style": "Floating glassmorphism top navigation",
+      "items": [
+        "Home",
+        "About",
+        "Work or Experience",
+        "Shop or Assets",
+        "Contact"
+      ],
+      "language_switch": true,
+      "scroll_behavior": "Scroll করলে background opacity/blur সামান্য পরিবর্তন; active page স্পষ্ট।"
+    },
+    "mobile": {
+      "style": "Fixed app-style bottom navigation",
+      "items": [
+        "Home",
+        "About",
+        "Work or Experience",
+        "Shop or Assets",
+        "Contact"
+      ],
+      "rules": [
+        "Icon + short label",
+        "Safe-area inset support",
+        "Bottom padding যেন content ঢেকে না যায়",
+        "Touch target যথেষ্ট বড়"
+      ]
+    }
+  },
+  "pages": {
+    "homepage_sections": [
+      {
+        "id": "hero",
+        "content": [
+          {"appropriate": ".REC - (a short line like 'Ideas & Thoughts to Impactful Visual Storytelling')"},
+          "Hasan Bin Ali",
+          "Video Editor & Cinematographer",
+          "Short bilingual introduction",
+          "Explore My Work CTA",
+          "Let's Connect CTA"
+          "social profile URLs with icons"
+        ],
+        "motion": "Headline line/word reveal; subtle accent movement; button feedback"
+      },
+      {
+        "id": "highlights",
+        "content": [
+          "4 Years of Experience (verify)",
+          "100+ Projects (verify)",
+          "Haddasana — ATN Bangla, BRB, MIBD"
+        ],
+        "motion": "Viewport-এ এলে একবার count-up"
+      },
+      {
+        "id": "showreel",
+        "content": [
+          "YouTube/Drive showreel",
+          "Short caption"
+        ],
+        "motion": "Poster thumbnail; click করলে iframe load; Viewport-এ এলে autoplay Without sound if possible without dellaing loding site"
+      },
+      {
+        "id": "selected_work",
+        "content": [
+          "Selected project cards",
+          "All / Video Editing / Cinematography / Drone filters",
+          "Full portfolio link"
+        ],
+        "motion": "Image zoom, overlay fade, VIEW PROJECT cursor label, Viewport-এ এলে autoplay Without sound if possible without dellaing loding site"
+      },
+
+      "এখানে একটা সেকশন যুক্ত করা যেতে পারে যেখানে যেসব প্রতিষ্ঠানের সাথে কাজ করেছি তাদের মধ্যে যে বড় বড় প্রতিষ্ঠান যেগুলো আছে সেগুলোর লোগো থাকতে পারে প্রয়োজনে সেটার একটা ক্যারাসল টাইপের স্লাইডার বা মানে অটোমেটিকাল স্ক্রল হতে থাকবে এরকম একটা সেকশন যুক্ত করা যেতে পারে if possible without dellaing loding site"
+
+      {
+        "id": "services",
+        "content": [
+          "Video Editing",
+          "Cinematography",
+          "Storytelling",
+          "Studio Management"
+        ],
+        "motion": "Subtle staggered reveal"
+      },
+      {
+        "id": "about_preview",
+        "content": [
+          "Short professional bio",
+          "Education/learning highlights",
+          "About page link"
+        ],
+        "motion": "Text/media reveal"
+      },
+      {
+        "id": "gallery",
+        "content": [
+          "Behind-the-scenes",
+          "Camera setup",
+          "Editing workstation",
+          "Production moments"
+        ],
+        "motion": "Masonry reveal and lightbox"
+      },
+      {
+        "id": "contact_cta",
+        "content": [
+          "Let's Create Something Meaningful",
+          "Email and contact link"
+        ],
+        "motion": "Text reveal and button feedback"
+      },
+      {
+        "id": "footer",
+        "content": [
+          "Name/role",
+          "Navigation",
+          "Email",
+          "Verified social links",
+          "Copyright"
+        ],
+        "motion": "Minimal"
+      }
+    ],
+    "about": [
+      "Professional story",
+      "Creative approach",
+      "Skills and areas of work",
+      "Experience timeline",
+      "Education/training"
+    ],
+    "Work or Experience": [
+      "Editing & Cinematography-focused introduction",
+      "Selected editing,Camera,event,drone work",
+      "Capabilities/workflow",
+      "Contact CTA"
+    ],
+
+    "এখানে যে পেইজ টা রাখতে চাচ্ছি সেটা মূলত আমি পরবর্তীতে যদি কোন অ্যাসেট শেয়ার করি বা কোন রেজিস্ট্রেশনের ঘোষণা দেই বা কোন অনলাইন সেশন করি সেটার রেজিস্ট্রেশন এইগুলা রাখতে চাচ্ছে তো এটার নাম কি রাখা যায় সেটা সিলেক্ট করো আর হলো পেজটা কোনভাবে ডিজাইন কর"
+    
+    "contact": [
+      "mail@hasanbinali.com",
+      "Mirpur, Dhaka, Bangladesh",
+      "Verified social links",
+      "Contact form only if secure server-side handling and spam protection are configured"
+    ]
+  },
+  "education_content_to_verify": [
+    {
+      "name": "University of Dhaka",
+      "subject": "Islamic Studies",
+      "period": "2024–Present",
+      "verify": "Exact programme wording"
+    },
+    {
+      "name": "Tomorrow's Filmmakers, UK",
+      "period": "2024–2025",
+      "verify": "Exact programme title"
+    },
+    {
+      "name": "KolderCreative",
+      "subject": "DaVinci Resolve",
+      "period": "2024",
+      "verify": "Exact course/credential wording"
+    },
+    {
+      "name": "Harvard CS50",
+      "period": "2025–2026",
+      "verify": "Exact course name and completion/current status; degree হিসেবে দেখানো যাবে না"
+    },
+  ],
+  "projects_initial_data": [
+    {
+      "title": "দ্যা স্কলার, দ্যা পলিটিশিয়ান",
+      "subtitle": "Allama Mamunul Haque",
+      "category": "editing",
+      "type": "youtube",
+      "id": "FFP_jYgdlww"
+    },
+    {
+      "title": "Haddasana Season 2",
+      "subtitle": "ATN Bangla · Reality Show",
+      "category": "editing",
+      "type": "youtube",
+      "id": "Yl4cRl-CkFw"
+    },
+    {
+      "title": "Da'ooni Nasheed",
+      "subtitle": "Imran Nafis · Nasheed Editing",
+      "category": "editing",
+      "type": "youtube",
+      "id": "tWPwFYwLfBw"
+    },
+    {
+      "title": "বাংলার উলামা মাশায়েখ EP-05",
+      "subtitle": "Biography Editing",
+      "category": "editing",
+      "type": "youtube",
+      "id": "STJPzxBEEDI"
+    },
+    {
+      "title": "শিক্ষা সফর 2025",
+      "subtitle": "Drone Videography",
+      "category": "drone",
+      "type": "youtube",
+      "id": "YO-vENkbvrk"
+    },
+    {
+      "title": "Talking Head Video",
+      "subtitle": "Videography & Editing",
+      "category": "cinema",
+      "type": "gdrive",
+      "id": "103USeZ2Lv1osiK4Sn-sfR8dTKgrIlBgN"
+    },
+    {
+      "title": "Event Videography",
+      "subtitle": "Event Coverage & Editing",
+      "category": "cinema",
+      "type": "gdrive",
+      "id": "1SxjCjR5dBPGSoVDeX0RQwvr3tEfQoMmV"
+    },
+    {
+      "title": "Logo Animation",
+      "subtitle": "Motion Graphics",
+      "category": "editing",
+      "type": "gdrive",
+      "id": "1fI0mO4A6X8I2olACUsPuwjW-d7Q1ztHT"
+    }
+  ],
+  "project_card_interaction": {
+    "default": "Thumbnail, project title and category visible",
+    "desktop_hover": [
+      "Thumbnail subtle zoom (approx 1.03–1.06)",
+      "Dark/blue overlay fades in",
+      "VIEW PROJECT or PLAY label appears",
+      "Custom cursor becomes a small circular label",
+      "Border/accent becomes slightly more visible",
+      "Viewport-এ এলে autoplay Without sound if possible without dellaing loding site"
+    ],
+    "click": "Dedicated project detail page-এ navigate করবে; সব project modal-এ খোলা হবে না।",
+    "detail_page_entry": "Title, text ও featured media restrained fade/translate/clip reveal দিয়ে আসবে; navigation আটকে রাখা যাবে না।",
+    "fullscreen_media": {
+      "trigger": "Featured image/video-র explicit expand control বা image click",
+      "animation": "Overlay fade-in এবং media scale-in; সম্ভব না হলে clean fade/scale",
+      "controls": [
+        "Sound on"
+        "Close",
+        "Escape key",
+        "Safe outside click",
+        "Gallery previous/next",
+        "Keyboard focus"
+      ],
+      "note": "Browser fullscreen বা video playback user-এর explicit click-এর পর চালু হবে।"
+    },
+    "mobile": "Hover-এর ওপর নির্ভরশীল তথ্য নয়; tap-friendly action সবসময় দৃশ্যমান থাকবে।"
+  },
+  "animation_spec": {
+    "style": "Smooth, restrained, cinematic; motion কনটেন্টকে support করবে",
+    "timing_ms": {
+      "micro_interaction": "120–220",
+      "standard_transition": "220–450",
+      "section_reveal": "450–750",
+      "warning": "দীর্ঘ intro animation দিয়ে content access delay করা যাবে না"
+    },
+    "effects": [
+      {
+        "name": "Hero text reveal",
+        "where": "Homepage hero",
+        "trigger": "Initial load",
+        "behavior": "Line/word opacity + slight vertical reveal"
+      },
+      {
+        "name": "Scroll reveal",
+        "where": "Section headings/cards/gallery",
+        "trigger": "Viewport entry",
+        "behavior": "Opacity + small translate; Intersection Observer"
+      },
+      {
+        "name": "Custom cursor highlighter",
+        "where": "Desktop only",
+        "trigger": "Pointer movement",
+        "behavior": "Blue dot/glow; interactive element-এ VIEW PROJECT/PLAY state",
+        "fallback": "Native cursor থাকবে; touch/coarse pointer ও reduced-motion-এ বন্ধ"
+      },
+      {
+        "name": "Project hover",
+        "where": "Project cards",
+        "trigger": "Hover",
+        "behavior": "Subtle image zoom + overlay + action label + cursor state"
+      },
+      {
+        "name": "Project open",
+        "where": "Card to detail page",
+        "trigger": "Click",
+        "behavior": "Fast normal navigation; optional lightweight transition enhancement"
+      },
+      {
+        "name": "Media lightbox",
+        "where": "Gallery/project stills",
+        "trigger": "Click",
+        "behavior": "Fade overlay + scale-in; keyboard accessible"
+      },
+      {
+        "name": "Navigation glass",
+        "where": "Desktop nav",
+        "trigger": "Scroll",
+        "behavior": "Subtle blur/background transition"
+      },
+      {
+        "name": "Button feedback",
+        "where": "Buttons/links",
+        "trigger": "Hover/focus/active",
+        "behavior": "Color, underline or slight movement; visible focus"
+      },
+      {
+        "name": "Stats count-up",
+        "where": "Highlights",
+        "trigger": "First viewport entry",
+        "behavior": "Once only"
+      }
+    ],
+    "reduced_motion": "prefers-reduced-motion চালু থাকলে nonessential movement, smooth scroll ও custom cursor effect বন্ধ বা কমিয়ে দিতে হবে।"
+  },
+  "performance_accessibility": {
+    "media": [
+      "AVIF/WebP image; suitable fallback",
+      "Image width/height বা aspect-ratio নির্দিষ্ট করে CLS কমানো",
+      "Below-the-fold image lazy-load",
+      "শুধু critical hero asset preload",
+      "Video iframe click-to-load",
+      "প্রথম load-এ সব video iframe নয়"
+    ],
+    "javascript": [
+      "Scripts defer",
+      "Scroll reveal-এর জন্য Intersection Observer",
+      "অপ্রয়োজনীয় continuous scroll handler নয়",
+      "Cursor animation দরকার হলে requestAnimationFrame",
+      "No large dependency"
+    ],
+    "accessibility": [
+      "Semantic HTML",
+      "Keyboard navigation",
+      "Visible focus",
+      "Readable contrast",
+      "Hover ছাড়া mobile interaction",
+      "No autoplay sound"
+    ],
+    "core_web_vitals_targets": {
+      "LCP": "≤ 2.5s",
+      "INP": "≤ 200ms",
+      "CLS": "≤ 0.1",
+      "note": "এগুলো লক্ষ্য; hosting, network ও media optimization অনুযায়ী বাস্তব ফল যাচাই করতে হবে।"
+    }
+  },
+  "seo_and_content_rules": {
+    "include": [
+      "Unique title/meta description per page",
+      "Open Graph preview",
+      "Descriptive project URLs",
+      "Meaningful image alt text",
+      "One clear H1 per page",
+      "Old useful URL preserve or 301 redirect"
+    ],
+    "avoid": [
+      "Unverified claims",
+      "Fake testimonials, Can Create demo",
+      "Unverified client logos",
+      "Invented project outcomes",
+      "Unlicensed media/fonts"
+    ],
+    "tone": "বাংলা হবে স্বাভাবিক, পরিষ্কার ও আত্মবিশ্বাসী; English হবে তার সংক্ষিপ্ত professional equivalent।"
+  },
+  "hosting_and_deployment": {
+    "status": "Existing hosting available",
+    "check_first": [
+      "PHP Version 8.3.36 Linux us-phx",
+      "cPanel/File Manager access yes",
+      "SSL/HTTPS yes",
+      "Storage and bandwidth 25 gb & Unlimited",
+      "Backup capability yes",
+      "Staging folder/subdomain availability Yes"
+    ],
+    "safe_process": [
+      "Full files/database backup",
+      "Staging-এ build/test",
+      "পুরোনো WordPress/site compromise থাকলে আগে audit",
+      "তারপর live deployment"
+    ]
+  },
+  "folder_structure": [
+    "index.php",
+    "about.php",
+    "----.php",
+    "-----.php",
+    "contact.php",
+    "projects/index.php",
+    "projects/single.php",
+    "includes/header.php",
+    "includes/footer.php",
+    "includes/navigation.php",
+    "includes/project-card.php",
+    "data/translations.json",
+    "data/projects.json",
+    "data/gallery.json",
+    "assets/css/style.css",
+    "assets/js/main.js",
+    "assets/js/language.js",
+    "assets/js/animations.js",
+    "assets/js/portfolio.js",
+    "assets/js/gallery.js",
+    "assets/js/video-embed.js",
+    "assets/images/",
+    "assets/thumbnails/",
+    "assets/fonts/"
+  ],
+  "development_phases": [
+    {
+      "phase": 2,
+      "name": "Core system",
+      "tasks": [
+        "PHP shared header/footer/navigation",
+        "Responsive base layout",
+        "Bengali default + instant English switch",
+        "JSON translation/project data"
+      ]
+    },
+
+    {
+      "phase": 4,
+      "name": "Interaction and motion",
+      "tasks": [
+        "Filters",
+        "Custom cursor",
+        "Scroll reveals",
+        "Hover states",
+        "Lightbox",
+        "Click-to-load embeds",
+        "Optional page transition"
+      ]
+    },
+    {
+      "phase": 5,
+      "name": "Optimization and launch",
+      "tasks": [
+        "Image/font optimization",
+        "Mobile/desktop testing",
+        "Keyboard/reduced-motion testing",
+        "SEO/redirects",
+        "Performance testing",
+        "Safe deployment"
+      ]
+    }
+  ],
+  "not_in_initial_scope": [
+    "WordPress/page builder dependency",
+    "React/Next.js/Vue",
+    "3D/Three.js",
+    "Autoplay background video",
+    "Autoplay music/sound effects",
+    "Complex CMS/admin dashboard",
+    "Login/user accounts",
+    "Heavy page transition framework",
+    "Unnecessary animation libraries"
+  ],

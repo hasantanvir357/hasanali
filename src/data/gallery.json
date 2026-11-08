@@ -1,0 +1,86 @@
+[
+  {
+    "id": "camera-rig",
+    "src": null,
+    "file": "/images/gallery-01.jpg",
+    "ratio": "4 / 5",
+    "caption": {
+      "bn": "ক্যামেরা রিগ — শুটিং প্রস্তুতি",
+      "en": "Camera rig — shoot prep"
+    },
+    "alt": {
+      "bn": "নীল আলোয় পেশাদার সিনেমা ক্যামেরা রিগের কাছের ছবি",
+      "en": "Close-up of a professional cinema camera rig under blue light"
+    }
+  },
+  {
+    "id": "grading-suite",
+    "src": null,
+    "file": "/images/gallery-02.jpg",
+    "ratio": "16 / 9",
+    "caption": {
+      "bn": "কালার গ্রেডিং ওয়ার্কস্টেশন",
+      "en": "Color grading workstation"
+    },
+    "alt": {
+      "bn": "কালার গ্রেডিং স্যুটের মনিটর ও কন্ট্রোল প্যানেল",
+      "en": "Monitor and control panel in a color grading suite"
+    }
+  },
+  {
+    "id": "drone-dusk",
+    "src": null,
+    "file": "/images/gallery-03.jpg",
+    "ratio": "16 / 9",
+    "caption": {
+      "bn": "সন্ধ্যায় ড্রোন শুটিং",
+      "en": "Drone shoot at dusk"
+    },
+    "alt": {
+      "bn": "সন্ধ্যার আকাশে ভেসে থাকা প্রফেশনাল ক্যামেরা ড্রোন",
+      "en": "A professional camera drone hovering in the dusk sky"
+    }
+  },
+  {
+    "id": "studio-lighting",
+    "src": null,
+    "file": "/images/gallery-04.jpg",
+    "ratio": "4 / 5",
+    "caption": {
+      "bn": "স্টুডিও লাইটিং সেটআপ",
+      "en": "Studio lighting setup"
+    },
+    "alt": {
+      "bn": "অন্ধকার স্টুডিওতে সফটবক্স ও লাইট স্ট্যান্ডের সেটআপ",
+      "en": "Softbox and light stands set up in a dark studio"
+    }
+  },
+  {
+    "id": "event-coverage",
+    "src": null,
+    "file": "/images/gallery-05.jpg",
+    "ratio": "16 / 9",
+    "caption": {
+      "bn": "ইভেন্ট কভারেজ",
+      "en": "Event coverage"
+    },
+    "alt": {
+      "bn": "গিম্বালে ক্যামেরা দিয়ে ইভেন্ট ফিল্মিংকারতে ভিডিওগ্রাফার",
+      "en": "A videographer filming an event with a gimbal-mounted camera"
+    }
+  },
+  {
+    "id": "production-moment",
+    "src": null,
+    "file": "/images/gallery-06.jpg",
+    "ratio": "4 / 5",
+    "caption": {
+      "bn": "প্রোডাকশন মুহূর্ত",
+      "en": "Production moment"
+    },
+    "alt": {
+      "bn": "ফিল্ম সেটের সামনে হাতে ধরা ক্ল্যাপবোর্ড",
+      "en": "A clapperboard held in front of a film set"
+    }
+  }
+]

@@ -1,0 +1,196 @@
+{
+  "name": "Hasan Bin Ali",
+  "domain": "hasanbinali.com",
+  "email": "mail@hasanbinali.com",
+  "experienceNote": "Since 2023",
+  "role": {
+    "bn": "ভিডিও এডিটর ও সিনেমাটোগ্রাফার",
+    "en": "Video Editor & Cinematographer"
+  },
+  "location": {
+    "bn": "হাতিরঝিল, মহানগর, রামপুর, ঢাকা, বাংলাদেশ",
+    "en": "Hatirjhil, Mahanagar, Rampura, Dhaka, Bangladesh"
+  },
+  "locationShort": {
+    "bn": "হাতিরঝিল, ঢাকা",
+    "en": "Hatirjhil, Dhaka"
+  },
+  "hero": {
+    "image": null,
+    "imageFile": "/images/hero.jpg",
+    "imageAlt": {
+      "bn": "সিনেমা ক্যামেরা রিগ নিয়ে কাজ করছেন একজন সিনেমাটোগ্রাফার",
+      "en": "A cinematographer working with a cinema camera rig"
+    },
+    "eyebrow": {
+      "bn": ".REC — আইডিয়া থেকে অর্থবহ ভিজ্যুয়াল গল্প",
+      "en": ".REC — Ideas & Thoughts to Impactful Visual Storytelling"
+    },
+    "bio": {
+      "bn": "আমি হাসান বিন আলী — ঢাকা ভিত্তিক ভিডিও এডিটর ও সিনেমাটোগ্রাফার। টিভি, ইভেন্ট, নাশিদ ও প্রাতিষ্ঠানিক কন্টেন্টের জন্য পরিষ্কার, উদ্দেশ্যমূলক ও অনুভূতিপূর্ণ ভিজ্যুয়াল গল্প তৈরি করি।",
+      "en": "I’m Hasan Bin Ali — a video editor and cinematographer based in Dhaka. I craft clean, purposeful and emotionally grounded visual stories for TV, events, nasheed and organizations."
+    }
+  },
+  "stats": {
+    "years": {
+      "value": 4,
+      "suffix": "+",
+      "label": {
+        "bn": "বছরের অভিজ্ঞতা",
+        "en": "Years of Experience"
+      }
+    },
+    "projects": {
+      "value": 50,
+      "suffix": "+",
+      "label": {
+        "bn": "অর্থবহ প্রজেক্ট",
+        "en": "Impactful Projects"
+      }
+    },
+    "clientsLabel": {
+      "bn": "নোটেবল ক্লায়েন্ট",
+      "en": "Notable Clients"
+    }
+  },
+  "clients": ["Haddasana", "ATN Bangla", "BRB", "MIBD"],
+  "services": [
+    {
+      "id": "editing",
+      "icon": "film",
+      "title": {
+        "bn": "ভিডিও এডিটিং",
+        "en": "Video Editing"
+      },
+      "desc": {
+        "bn": "রাফ কাট থেকে ফাইনাল ডেলিভারি — গল্প, টাইমিং ও ফিনিশিং সহ সম্পূর্ণ সম্পাদনা।",
+        "en": "From rough cut to final delivery — complete editing with story, pacing and finish."
+      }
+    },
+    {
+      "id": "cinematography",
+      "icon": "camera",
+      "title": {
+        "bn": "সিনেমাটোগ্রাফি",
+        "en": "Cinematography"
+      },
+      "desc": {
+        "bn": "ক্যামেরা, লাইটিং ও ফ্রেমিং — ইভেন্ট, ইন্টারভিউ ও প্রোডাকশনের জন্য।",
+        "en": "Camera, lighting and framing for events, interviews and productions."
+      }
+    },
+    {
+      "id": "storytelling",
+      "icon": "sparkles",
+      "title": {
+        "bn": "ভিজ্যুয়াল স্টোরিটেলিং",
+        "en": "Visual Storytelling"
+      },
+      "desc": {
+        "bn": "মোশন গ্রাফিক্স, কালার ও সাউন্ডে গল্পকে জীবন্ত করা।",
+        "en": "Bringing stories to life through motion, color and sound."
+      }
+    },
+    {
+      "id": "studio",
+      "icon": "sliders",
+      "title": {
+        "bn": "স্টুডিও ম্যানেজমেন্ট",
+        "en": "Studio Management"
+      },
+      "desc": {
+        "bn": "প্রোডাকশন ওয়ার্কফ্লো, টিম ও ডেলিভারি পরিচালনা।",
+        "en": "Managing production workflow, team and delivery."
+      }
+    }
+  ],
+  "about": {
+    "imageAlt": {
+      "bn": "এডিটিং ওয়ার্কস্টেশনে কাজের মুহূর্ত",
+      "en": "A working moment at the editing workstation"
+    },
+    "bio": [
+      {
+        "bn": "ক্যামেরার পেছনে ও এডিটিং টেবিলে — দুই জায়গাতেই কাজের উদ্দেশ্য একটাই: দর্শকের মনে থোককে এমন পরিষ্কার ভিজ্যুয়াল গল্প। ২০২৩ সাল থেকে টিভিশো, ইভেন্ট, নাশিদ ও প্রাতিষ্ঠানিক কন্টেন্টে কাজ করছি।",
+        "en": "Both behind the camera and at the edit table — with one aim: clean visual stories that stay with the viewer. Working on TV shows, events, nasheed and organizational content since 2023."
+      },
+      {
+        "bn": "প্রতিটি প্রজেক্টে গল্প, টাইমিং ও ফিনিশিং — তিনটিকে সমান গুরুত্ব দিই। কাজের ধরন মিনিমাল, উদ্দেশ্যমূলক ও প্রফেশনাল।",
+        "en": "On every project I give equal weight to story, pacing and finish. The approach is minimal, purposeful and professional."
+      }
+    ],
+    "educationLabel": {
+      "bn": "শিক্ষা ও প্রশিক্ষণ",
+      "en": "Education & Training"
+    }
+  },
+  "education": [
+    {
+      "id": "university-of-dhaka",
+      "name": "University of Dhaka",
+      "subject": {
+        "bn": "ইসলামিক স্টাডিজ",
+        "en": "Islamic Studies"
+      },
+      "period": "2024–Present"
+    },
+    {
+      "id": "tomorrows-filmmakers",
+      "name": "Tomorrow’s Filmmakers, UK",
+      "subject": null,
+      "period": "2024–2025"
+    },
+    {
+      "id": "koldercreative",
+      "name": "KolderCreative",
+      "subject": {
+        "bn": "DaVinci Resolve",
+        "en": "DaVinci Resolve"
+      },
+      "period": "2024"
+    },
+    {
+      "id": "harvard-cs50",
+      "name": "Harvard CS50",
+      "subject": null,
+      "period": "2025–2026"
+    }
+  ],
+  "socials": [
+    {
+      "id": "facebook",
+      "label": "Facebook",
+      "url": null,
+      "todo": true
+    },
+    {
+      "id": "youtube",
+      "label": "YouTube",
+      "url": null,
+      "todo": true
+    },
+    {
+      "id": "instagram",
+      "label": "Instagram",
+      "url": null,
+      "todo": true
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "url": null,
+      "todo": true
+    }
+  ],
+  "showreel": {
+    "type": "youtube",
+    "id": null,
+    "todo": true,
+    "poster": null,
+    "posterFile": "/images/showreel-poster.jpg",
+    "posterAlt": {
+      "bn": "শোরিল পোস্টার — রাতের ফিল্ম সেট",
+      "en": "Showreel poster — a film set at night"
+    }
+  }
+}
