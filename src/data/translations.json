@@ -93,7 +93,25 @@
       "emailLabel": "ইমেইল",
       "locationLabel": "লোকেশন",
       "cta": "ইমেইল পাঠান",
-      "socialLabel": "সোশ্যাল"
+      "socialLabel": "সোশ্যাল",
+      "form": {
+        "title": "সরাসরি বার্তা পাঠান",
+        "name": "আপনার নাম",
+        "namePlaceholder": "যেমন — রহিম উদ্দিন",
+        "email": "ইমেইল ঠিকানা",
+        "emailPlaceholder": "you@example.com",
+        "subject": "বিষয়",
+        "subjectPlaceholder": "প্রজেক্টের ধরন / সময়সীমা",
+        "subjectDefault": "{name} এর প্রজেক্ট ইনকোয়ারি",
+        "message": "বার্তা",
+        "messagePlaceholder": "প্রজেক্টটি সম্পর্কে সংক্ষিপ্তভাবে লিখুন…",
+        "submit": "ইমেইল অ্যাপে পাঠান",
+        "note": "সাবমিট করলে আপনার নিজের ইমেইল অ্যাপ খুলবে — বার্তাটি সেখানে আগে থেকেই বসানো থাকবে। এই সাইটে কোনো ডেটা সংরক্ষণ করা হয় না।",
+        "sent": "বার্তা প্রস্তুত — ইমেইল অ্যাপ খুলছে…",
+        "responseLabel": "রেসপন্স টাইম",
+        "responseValue": "সাধারণত ২৪–৪৮ ঘণ্টার মধ্যে",
+        "fallback": "ইমেইল অ্যাপ না খুললে সরাসরি লিখুন —"
+      }
     },
     "footer": {
       "tagline": "ভিজ্যুয়াল গল্প, সত্যনিষ্ঠভাবে।",
@@ -131,6 +149,8 @@
       "back": "সব প্রজেক্ট",
       "category": "ক্যাটাগরি",
       "format": "ফরম্যাট",
+      "role": "ভূমিকা",
+      "client": "ক্লায়েন্ট",
       "description": "বর্ণনা",
       "prev": "আগের প্রজেক্ট",
       "next": "পরের প্রজেক্ট",
@@ -140,6 +160,20 @@
       "notFoundTitle": "প্রজেক্টটি পাওয়া যায়নি",
       "notFoundDesc": "এই লিংকটি সম্ভবত সরানো হয়েছে বা ভুল।",
       "notFoundCta": "হোমে ফিরে যান"
+    },
+    "resume": {
+      "label": "সিভি",
+      "title": "হাসান বিন আলী — সিভি",
+      "print": "প্রিন্ট / PDF সেভ করুন",
+      "back": "সাইটে ফিরে যান",
+      "profile": "প্রোফাইল",
+      "services": "সার্ভিস",
+      "experience": "অভিজ্ঞতা",
+      "clients": "ক্লায়েন্ট",
+      "education": "শিক্ষা ও প্রশিক্ষণ",
+      "selectedWork": "নির্বাচিত কাজ",
+      "contactSection": "যোগাযোগ",
+      "viewCv": "সিভি দেখুন"
     },
     "notFound": {
       "title": "৪০৪ — পাতাটি পাওয়া যায়নি",
@@ -241,7 +275,25 @@
       "emailLabel": "Email",
       "locationLabel": "Location",
       "cta": "Send an email",
-      "socialLabel": "Social"
+      "socialLabel": "Social",
+      "form": {
+        "title": "Send a message",
+        "name": "Your name",
+        "namePlaceholder": "e.g. Rahim Uddin",
+        "email": "Email address",
+        "emailPlaceholder": "you@example.com",
+        "subject": "Subject",
+        "subjectPlaceholder": "Project type / timeline",
+        "subjectDefault": "Project inquiry from {name}",
+        "message": "Message",
+        "messagePlaceholder": "Tell me briefly about the project…",
+        "submit": "Open in email app",
+        "note": "Submitting opens your own email app with the message prefilled — nothing is stored on this site.",
+        "sent": "Message ready — opening your email app…",
+        "responseLabel": "Response time",
+        "responseValue": "Usually within 24–48 hours",
+        "fallback": "If nothing opens, email directly at —"
+      }
     },
     "footer": {
       "tagline": "Visual stories, told with purpose.",
@@ -279,6 +331,8 @@
       "back": "All projects",
       "category": "Category",
       "format": "Format",
+      "role": "Role",
+      "client": "Client",
       "description": "Description",
       "prev": "Previous project",
       "next": "Next project",
@@ -288,6 +342,20 @@
       "notFoundTitle": "Project not found",
       "notFoundDesc": "This link has likely been removed or is incorrect.",
       "notFoundCta": "Back to home"
+    },
+    "resume": {
+      "label": "Résumé",
+      "title": "Hasan Bin Ali — Résumé",
+      "print": "Print / Save as PDF",
+      "back": "Back to site",
+      "profile": "Profile",
+      "services": "Services",
+      "experience": "Experience",
+      "clients": "Clients",
+      "education": "Education & Training",
+      "selectedWork": "Selected Work",
+      "contactSection": "Contact",
+      "viewCv": "View résumé"
     },
     "notFound": {
       "title": "404 — Page not found",

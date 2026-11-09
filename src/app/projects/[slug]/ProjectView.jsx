@@ -33,6 +33,16 @@ export default function ProjectView({ project, prev, next }) {
 
   const mediaLabel = isYoutube ? t.work.mediaYoutube : t.work.mediaGdrive;
 
+  /* Meta rows — optional fields only render when present in the data. */
+  const metaRows = [
+    { label: t.project.category, value: t.work.filters[project.category] },
+    ...(project.role ? [{ label: t.project.role, value: project.role }] : []),
+    ...(project.client
+      ? [{ label: t.project.client, value: project.client }]
+      : []),
+    { label: t.project.format, value: mediaLabel },
+  ];
+
   return (
     <div className="mx-auto max-w-5xl px-5 pt-28 pb-16 md:pt-36 md:pb-24">
       <Reveal>
@@ -81,20 +91,17 @@ export default function ProjectView({ project, prev, next }) {
       <div className="mt-11 grid gap-9 md:grid-cols-[minmax(0,1fr)_minmax(0,1.7fr)] md:gap-12">
         <Reveal>
           <dl className="glass rounded-2xl p-6">
-            <div>
-              <dt className="text-[11px] font-medium tracking-[0.24em] text-accent uppercase">
-                {t.project.category}
-              </dt>
-              <dd className="mt-2 text-sm text-text">
-                {t.work.filters[project.category]}
-              </dd>
-            </div>
-            <div className="mt-5 border-t border-line pt-5">
-              <dt className="text-[11px] font-medium tracking-[0.24em] text-accent uppercase">
-                {t.project.format}
-              </dt>
-              <dd className="mt-2 text-sm text-text">{mediaLabel}</dd>
-            </div>
+            {metaRows.map((row, rowIndex) => (
+              <div
+                key={row.label}
+                className={rowIndex > 0 ? "mt-5 border-t border-line pt-5" : ""}
+              >
+                <dt className="text-[11px] font-medium tracking-[0.24em] text-accent uppercase">
+                  {row.label}
+                </dt>
+                <dd className="mt-2 text-sm text-text">{row.value}</dd>
+              </div>
+            ))}
           </dl>
         </Reveal>
 

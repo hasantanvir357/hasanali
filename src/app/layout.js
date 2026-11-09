@@ -7,6 +7,8 @@ import Navbar from "@/components/layout/Navbar";
 import MobileNav from "@/components/layout/MobileNav";
 import Footer from "@/components/layout/Footer";
 import CustomCursor from "@/components/ui/CustomCursor";
+import JsonLd from "@/components/seo/JsonLd";
+import { personJsonLd } from "@/components/seo/personJsonLd";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -73,6 +75,7 @@ export default function RootLayout({ children }) {
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: revealBootScript }} />
+        <JsonLd data={personJsonLd} />
       </head>
       <body className="relative flex min-h-full flex-col bg-bg text-text antialiased">
         <LanguageProvider>

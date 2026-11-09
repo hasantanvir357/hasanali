@@ -16,7 +16,7 @@
     "en": "Hatirjhil, Dhaka"
   },
   "hero": {
-    "image": null,
+    "image": "/images/hero.jpg",
     "imageFile": "/images/hero.jpg",
     "imageAlt": {
       "bn": "সিনেমা ক্যামেরা রিগ নিয়ে কাজ করছেন একজন সিনেমাটোগ্রাফার",
@@ -186,7 +186,7 @@
     "type": "youtube",
     "id": null,
     "todo": true,
-    "poster": null,
+    "poster": "/images/showreel-poster.jpg",
     "posterFile": "/images/showreel-poster.jpg",
     "posterAlt": {
       "bn": "শোরিল পোস্টার — রাতের ফিল্ম সেট",

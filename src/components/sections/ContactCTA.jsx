@@ -14,6 +14,7 @@ export default function ContactCTA({
   sectionId = "contact",
   headingId = "contact-title",
   className = "relative scroll-mt-24 overflow-hidden py-24 md:py-32",
+  children = null,
 }) {
   const { t, lang } = useLanguage();
 
@@ -56,6 +57,8 @@ export default function ContactCTA({
             </a>
           </div>
         </Reveal>
+
+        {children}
 
         <Reveal
           delay={140}

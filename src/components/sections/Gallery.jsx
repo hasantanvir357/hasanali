@@ -24,6 +24,8 @@ export default function Gallery({
 }) {
   const { t, lang } = useLanguage();
   const [activeIndex, setActiveIndex] = useState(-1);
+  /* Items whose image file is missing fall back to the placeholder slot. */
+  const [failedIds, setFailedIds] = useState([]);
   const total = gallery.length;
 
   const labels = {
@@ -65,13 +67,18 @@ export default function Gallery({
                     className="relative block w-full"
                     style={{ aspectRatio: item.ratio }}
                   >
-                    {item.src ? (
+                    {item.src && !failedIds.includes(item.id) ? (
                       <Image
                         src={item.src}
                         alt={pick(item.alt, lang)}
                         fill
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         className="object-cover transition duration-500 group-hover:scale-[1.05]"
+                        onError={() =>
+                          setFailedIds((prev) =>
+                            prev.includes(item.id) ? prev : [...prev, item.id]
+                          )
+                        }
                       />
                     ) : (
                       <MediaSlot />

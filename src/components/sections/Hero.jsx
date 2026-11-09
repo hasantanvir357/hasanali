@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 
 import site from "@/data/site.json";
 import { useLanguage } from "@/components/providers/LanguageProvider";
@@ -16,6 +17,8 @@ import { IconArrowRight, IconPin } from "@/components/ui/icons";
  */
 export default function Hero() {
   const { t, lang } = useLanguage();
+  /* Falls back to the placeholder frame if the photo file is missing. */
+  const [heroFailed, setHeroFailed] = useState(false);
 
   return (
     <section
@@ -96,7 +99,7 @@ export default function Hero() {
         {/* ------------------------------- right ------------------------------ */}
         <div className="relative mx-auto w-full max-w-sm md:max-w-none">
           <figure className="relative aspect-[4/5] overflow-hidden rounded-3xl border border-line bg-surface shadow-[0_40px_100px_rgba(0,0,0,0.55)] md:shadow-[0_40px_110px_rgba(0,0,0,0.6)]">
-            {site.hero.image ? (
+            {site.hero.image && !heroFailed ? (
               <Image
                 src={site.hero.image}
                 alt={pick(site.hero.imageAlt, lang)}
@@ -104,6 +107,7 @@ export default function Hero() {
                 priority
                 sizes="(max-width: 768px) 90vw, 44vw"
                 className="object-cover"
+                onError={() => setHeroFailed(true)}
               />
             ) : (
               <MediaSlot label="HERO FRAME" />

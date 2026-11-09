@@ -1,7 +1,7 @@
 [
   {
     "id": "camera-rig",
-    "src": null,
+    "src": "/images/gallery-01.jpg",
     "file": "/images/gallery-01.jpg",
     "ratio": "4 / 5",
     "caption": {
@@ -15,7 +15,7 @@
   },
   {
     "id": "grading-suite",
-    "src": null,
+    "src": "/images/gallery-02.jpg",
     "file": "/images/gallery-02.jpg",
     "ratio": "16 / 9",
     "caption": {
@@ -29,7 +29,7 @@
   },
   {
     "id": "drone-dusk",
-    "src": null,
+    "src": "/images/gallery-03.jpg",
     "file": "/images/gallery-03.jpg",
     "ratio": "16 / 9",
     "caption": {
@@ -43,7 +43,7 @@
   },
   {
     "id": "studio-lighting",
-    "src": null,
+    "src": "/images/gallery-04.jpg",
     "file": "/images/gallery-04.jpg",
     "ratio": "4 / 5",
     "caption": {
@@ -57,7 +57,7 @@
   },
   {
     "id": "event-coverage",
-    "src": null,
+    "src": "/images/gallery-05.jpg",
     "file": "/images/gallery-05.jpg",
     "ratio": "16 / 9",
     "caption": {
@@ -71,7 +71,7 @@
   },
   {
     "id": "production-moment",
-    "src": null,
+    "src": "/images/gallery-06.jpg",
     "file": "/images/gallery-06.jpg",
     "ratio": "4 / 5",
     "caption": {

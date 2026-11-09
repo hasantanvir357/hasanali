@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 
 import { getNeighborProjects, getProject, projects } from "@/lib/projects";
+import JsonLd from "@/components/seo/JsonLd";
 import ProjectView from "./ProjectView";
 
 /**
@@ -47,8 +48,28 @@ export default async function ProjectPage({ params }) {
 
   const { prev, next } = getNeighborProjects(slug);
 
+  /* VideoObject structured data for YouTube projects (real facts only). */
+  const videoJsonLd =
+    project.media === "youtube" && project.id
+      ? {
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          name: `${project.title} — Hasan Bin Ali`,
+          description: project.description.en,
+          thumbnailUrl: `https://i.ytimg.com/vi/${project.id}/maxresdefault.jpg`,
+          contentUrl: `https://www.youtube.com/watch?v=${project.id}`,
+          embedUrl: `https://www.youtube.com/embed/${project.id}`,
+          uploader: {
+            "@type": "Person",
+            name: "Hasan Bin Ali",
+            url: "https://hasanbinali.com",
+          },
+        }
+      : null;
+
   return (
     <main id="main">
+      {videoJsonLd ? <JsonLd data={videoJsonLd} /> : null}
       <ProjectView project={project} prev={prev} next={next} />
     </main>
   );

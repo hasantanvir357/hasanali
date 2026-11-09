@@ -185,6 +185,21 @@ export const IconMonitor = (p) => (
   </Svg>
 );
 
+export const IconClock = (p) => (
+  <Svg {...p}>
+    <circle cx="12" cy="12" r="8.5" />
+    <path d="M12 7.5V12l3 2" />
+  </Svg>
+);
+
+export const IconPrinter = (p) => (
+  <Svg {...p}>
+    <path d="M7 8.5V4h10v4.5" />
+    <rect x="4" y="8.5" width="16" height="8" rx="2" />
+    <path d="M7 14h10v6H7z" />
+  </Svg>
+);
+
 /* ---------------------------------- social ---------------------------------- */
 export const IconFacebook = ({ className = "" }) => (
   <svg

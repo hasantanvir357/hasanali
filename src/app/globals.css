@@ -355,3 +355,90 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ------------------------------- print styles ------------------------------ */
+/* Used by /resume ("Print / Save as PDF"). Site chrome is removed and the
+   dark palette is remapped to an ink-friendly light one. */
+@media print {
+  @page {
+    margin: 14mm;
+  }
+
+  header,
+  footer,
+  nav,
+  .no-print,
+  .cursor-root {
+    display: none !important;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #111827 !important;
+    overflow: visible !important;
+  }
+
+  main,
+  .resume-doc {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    max-width: none !important;
+  }
+
+  .resume-doc {
+    color: #111827;
+  }
+
+  .resume-doc .text-text {
+    color: #111827 !important;
+  }
+
+  .resume-doc .text-muted {
+    color: #4b5563 !important;
+  }
+
+  .resume-doc .text-accent {
+    color: #0057c2 !important;
+  }
+
+  .resume-doc .bg-accent {
+    background-color: #0057c2 !important;
+  }
+
+  .resume-doc .bg-line,
+  .resume-doc .border-line,
+  .resume-doc .border-l {
+    border-color: #d1d5db !important;
+    background-color: transparent !important;
+  }
+
+  .resume-doc .bg-surface,
+  .resume-doc .glass {
+    background-color: #ffffff !important;
+    border-color: #d1d5db !important;
+  }
+
+  .resume-doc .bg-surface\/40,
+  .resume-doc .bg-surface\/60 {
+    background-color: #f9fafb !important;
+  }
+
+  /* Two-column résumé collapses to a single readable column. */
+  .resume-grid {
+    display: block !important;
+  }
+
+  .resume-grid > * + * {
+    margin-top: 28px;
+  }
+
+  a[href^="mailto:"]::after {
+    content: none !important;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

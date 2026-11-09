@@ -5,7 +5,7 @@ import { useLanguage } from "@/components/providers/LanguageProvider";
 import { pick } from "@/lib/i18n";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { IconArrowRight } from "@/components/ui/icons";
+import { IconArrowRight, IconPrinter } from "@/components/ui/icons";
 
 import Link from "next/link";
 
@@ -42,13 +42,23 @@ export default function AboutPreview({
               </p>
             ))}
 
-            <Link
-              href={ctaHref}
-              className="group inline-flex items-center gap-2 pt-2 text-sm font-medium text-accent transition duration-200 hover:text-text"
-            >
-              {t.about.cta}
-              <IconArrowRight className="h-4 w-4 transition duration-300 group-hover:translate-x-1" />
-            </Link>
+            <div className="flex flex-wrap items-center gap-4 pt-2">
+              <Link
+                href={ctaHref}
+                className="group inline-flex items-center gap-2 text-sm font-medium text-accent transition duration-200 hover:text-text"
+              >
+                {t.about.cta}
+                <IconArrowRight className="h-4 w-4 transition duration-300 group-hover:translate-x-1" />
+              </Link>
+
+              <Link
+                href="/resume"
+                className="inline-flex items-center gap-2 rounded-full border border-line bg-surface/60 px-5 py-2.5 text-sm font-medium text-text backdrop-blur transition duration-200 hover:border-accent/60 hover:bg-accent/10"
+              >
+                <IconPrinter className="h-4 w-4 text-accent" />
+                {t.resume.viewCv}
+              </Link>
+            </div>
           </Reveal>
 
           <Reveal delay={140}>
