@@ -8,18 +8,20 @@ import SocialLinks from "@/components/ui/SocialLinks";
 import { IconMail, IconPin } from "@/components/ui/icons";
 
 /** Editorial high-impact closing CTA with contact cards and socials. */
-export default function ContactCTA() {
+export default function ContactCTA({
+  as: Heading = "h2",
+  index = "08",
+  sectionId = "contact",
+  headingId = "contact-title",
+  className = "relative scroll-mt-24 overflow-hidden py-24 md:py-32",
+}) {
   const { t, lang } = useLanguage();
 
   const labelClass =
     "text-[11px] font-medium tracking-[0.24em] text-accent uppercase";
 
   return (
-    <section
-      id="contact"
-      aria-labelledby="contact-title"
-      className="relative scroll-mt-24 overflow-hidden py-24 md:py-32"
-    >
+    <section id={sectionId} aria-labelledby={headingId} className={className}>
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-[radial-gradient(55%_100%_at_50%_0%,rgba(0,133,255,0.16),transparent_70%)]"
@@ -28,17 +30,17 @@ export default function ContactCTA() {
       <div className="relative mx-auto max-w-6xl px-5">
         <Reveal className="text-center">
           <p className="mb-6 flex items-center justify-center gap-3 text-[11px] font-medium tracking-[0.28em] text-accent uppercase">
-            <span className="text-muted/70">08</span>
+            {index ? <span className="text-muted/70">{index}</span> : null}
             <span>{t.contact.label}</span>
           </p>
 
-          <h2
-            id="contact-title"
+          <Heading
+            id={headingId}
             className="mx-auto max-w-4xl text-[clamp(2.1rem,6vw,4.25rem)] leading-[1.1] font-semibold tracking-tight text-balance"
           >
             <span className="block">{t.contact.titleLine1}</span>
             <span className="block text-accent">{t.contact.titleLine2}</span>
-          </h2>
+          </Heading>
 
           <p className="mx-auto mt-6 max-w-xl text-[15px] leading-relaxed text-muted">
             {t.contact.desc}

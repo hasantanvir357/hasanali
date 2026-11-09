@@ -15,11 +15,16 @@ const FILTERS = ["all", "editing", "cinema", "drone"];
 /**
  * Selected projects: segmented filter tabs + media-led cards.
  * Hover → thumbnail zoom, dark/blue overlay glow, VIEW PROJECT badge and
- * a matching custom-cursor label. Cards navigate to `/projects/[slug]`
- * (dedicated detail routes, never a modal). On touch devices the badge is
- * always visible so no information depends on hover.
+ * a matching custom-cursor label. Cards navigate to `/projects/[slug]`.
  */
-export default function Projects() {
+export default function Projects({
+  as = "h2",
+  sectionId = "work",
+  headingId = "work-title",
+  index = "04",
+  className = "relative scroll-mt-24 py-16 md:py-24",
+  showHeading = true,
+}) {
   const { t } = useLanguage();
   const [active, setActive] = useState("all");
 
@@ -32,50 +37,49 @@ export default function Projects() {
   );
 
   return (
-    <section
-      id="work"
-      aria-labelledby="work-title"
-      className="relative scroll-mt-24 py-16 md:py-24"
-    >
+    <section id={sectionId} aria-labelledby={headingId} className={className}>
       <div
         aria-hidden="true"
         className="pointer-events-none absolute top-1/4 left-0 h-[420px] w-[520px] rounded-full bg-[radial-gradient(closest-side,rgba(0,133,255,0.09),transparent)] blur-3xl"
       />
 
       <div className="relative mx-auto max-w-6xl px-5">
-        <SectionHeading
-          index="04"
-          label={t.work.label}
-          title={t.work.title}
-          desc={t.work.desc}
-          id="work-title"
-          action={
-            <div
-              role="group"
-              aria-label={t.work.filtersLabel}
-              className="flex max-w-full gap-1.5 overflow-x-auto rounded-full border border-line bg-surface/70 p-1.5 backdrop-blur"
-            >
-              {FILTERS.map((filter) => {
-                const isActive = active === filter;
-                return (
-                  <button
-                    key={filter}
-                    type="button"
-                    onClick={() => setActive(filter)}
-                    aria-pressed={isActive}
-                    className={`shrink-0 rounded-full px-4 py-2 text-[12px] font-medium transition duration-200 ${
-                      isActive
-                        ? "bg-accent text-bg shadow-[0_0_16px_rgba(0,133,255,0.4)]"
-                        : "text-muted hover:text-text"
-                    }`}
-                  >
-                    {t.work.filters[filter]}
-                  </button>
-                );
-              })}
-            </div>
-          }
-        />
+        {showHeading ? (
+          <SectionHeading
+            index={index}
+            label={t.work.label}
+            title={t.work.title}
+            desc={t.work.desc}
+            id={headingId}
+            as={as}
+            action={
+              <div
+                role="group"
+                aria-label={t.work.filtersLabel}
+                className="flex max-w-full gap-1.5 overflow-x-auto rounded-full border border-line bg-surface/70 p-1.5 backdrop-blur [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              >
+                {FILTERS.map((filter) => {
+                  const isActive = active === filter;
+                  return (
+                    <button
+                      key={filter}
+                      type="button"
+                      onClick={() => setActive(filter)}
+                      aria-pressed={isActive}
+                      className={`shrink-0 rounded-full px-3.5 py-2 text-[12px] font-medium transition duration-200 sm:px-4 ${
+                        isActive
+                          ? "bg-accent text-bg shadow-[0_0_16px_rgba(0,133,255,0.4)]"
+                          : "text-muted hover:text-text"
+                      }`}
+                    >
+                      {t.work.filters[filter]}
+                    </button>
+                  );
+                })}
+              </div>
+            }
+          />
+        ) : null}
 
         {visible.length === 0 ? (
           <p className="rounded-2xl border border-dashed border-line bg-surface/40 px-6 py-14 text-center text-sm text-muted">

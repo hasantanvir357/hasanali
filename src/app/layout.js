@@ -79,8 +79,11 @@ export default function RootLayout({ children }) {
           <SkipLink />
           <CustomCursor />
           <Navbar />
-          <div className="flex flex-1 flex-col pb-[96px] md:pb-0">
-            <div className="flex-1">{children}</div>
+          <div className="flex flex-1 flex-col pb-[calc(5.5rem+env(safe-area-inset-bottom))] md:pb-0">
+            <div className="relative flex-1">
+              <div id="top" className="absolute inset-x-0 top-0 h-px" aria-hidden="true" />
+              {children}
+            </div>
             <Footer />
           </div>
           <MobileNav />

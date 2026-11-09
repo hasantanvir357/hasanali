@@ -13,7 +13,12 @@ import VideoEmbed from "@/components/ui/VideoEmbed";
  * video ID exists in site.json the button reveals a coming-soon panel;
  * adding an ID activates the live embed with no code changes.
  */
-export default function Showreel() {
+export default function Showreel({
+  as = "h2",
+  index = "05",
+  headingId = "showreel-title",
+  className = "relative py-16 md:py-24",
+}) {
   const { t, lang } = useLanguage();
   const showreel = site.showreel;
 
@@ -25,17 +30,15 @@ export default function Showreel() {
   };
 
   return (
-    <section
-      aria-labelledby="showreel-title"
-      className="relative py-16 md:py-24"
-    >
+    <section aria-labelledby={headingId} className={className}>
       <div className="mx-auto max-w-6xl px-5">
         <SectionHeading
-          index="05"
+          index={index}
           label={t.showreel.label}
           title={t.showreel.title}
           desc={t.showreel.desc}
-          id="showreel-title"
+          id={headingId}
+          as={as}
         />
 
         <Reveal className="relative">

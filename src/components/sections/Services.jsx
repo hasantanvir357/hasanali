@@ -20,21 +20,24 @@ const ICONS = {
 };
 
 /** Four service cards with a staggered reveal. */
-export default function Services() {
+export default function Services({
+  as = "h2",
+  index = "03",
+  headingId = "services-title",
+  className = "relative py-16 md:py-24",
+}) {
   const { t, lang } = useLanguage();
 
   return (
-    <section
-      aria-labelledby="services-title"
-      className="relative py-16 md:py-24"
-    >
+    <section aria-labelledby={headingId} className={className}>
       <div className="mx-auto max-w-6xl px-5">
         <SectionHeading
-          index="03"
+          index={index}
           label={t.services.label}
           title={t.services.title}
           desc={t.services.desc}
-          id="services-title"
+          id={headingId}
+          as={as}
         />
 
         <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">

@@ -37,7 +37,7 @@ export default function ProjectView({ project, prev, next }) {
     <div className="mx-auto max-w-5xl px-5 pt-28 pb-16 md:pt-36 md:pb-24">
       <Reveal>
         <Link
-          href="/#work"
+          href="/work"
           className="group inline-flex items-center gap-2 text-sm text-muted transition duration-200 hover:text-text"
         >
           <IconChevronLeft className="h-4 w-4 transition duration-200 group-hover:-translate-x-1" />

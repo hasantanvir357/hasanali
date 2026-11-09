@@ -7,25 +7,31 @@ import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { IconArrowRight } from "@/components/ui/icons";
 
-/** Homepage about preview: bilingual bio + education/training timeline. */
-export default function AboutPreview() {
+import Link from "next/link";
+
+/** About section: bilingual bio + education/training timeline. */
+export default function AboutPreview({
+  as = "h2",
+  index = "07",
+  sectionId = "about",
+  headingId = "about-title",
+  className = "relative scroll-mt-24 py-16 md:py-24",
+  ctaHref = "/contact",
+}) {
   const { t, lang } = useLanguage();
 
   return (
-    <section
-      id="about"
-      aria-labelledby="about-title"
-      className="relative scroll-mt-24 py-16 md:py-24"
-    >
+    <section id={sectionId} aria-labelledby={headingId} className={className}>
       <div className="mx-auto max-w-6xl px-5">
         <SectionHeading
-          index="07"
+          index={index}
           label={t.about.label}
           title={t.about.title}
-          id="about-title"
+          id={headingId}
+          as={as}
         />
 
-        <div className="grid gap-12 md:grid-cols-2 md:gap-16">
+        <div className="grid gap-10 md:grid-cols-2 md:gap-16">
           <Reveal className="space-y-5">
             {site.about.bio.map((paragraph) => (
               <p
@@ -36,13 +42,13 @@ export default function AboutPreview() {
               </p>
             ))}
 
-            <a
-              href="#contact"
-              className="group inline-flex items-center gap-2 pt-2 text-sm font-medium text-accent transition duration-200 hover:text-white"
+            <Link
+              href={ctaHref}
+              className="group inline-flex items-center gap-2 pt-2 text-sm font-medium text-accent transition duration-200 hover:text-text"
             >
               {t.about.cta}
               <IconArrowRight className="h-4 w-4 transition duration-300 group-hover:translate-x-1" />
-            </a>
+            </Link>
           </Reveal>
 
           <Reveal delay={140}>
@@ -52,16 +58,16 @@ export default function AboutPreview() {
 
             <ol className="border-l border-line">
               {site.education.map((entry) => (
-                <li key={entry.id} className="relative pb-7 pl-6 last:pb-0">
+                <li key={entry.id} className="relative pb-7 pl-5 last:pb-0 sm:pl-6">
                   <span
                     aria-hidden="true"
                     className="absolute top-1.5 -left-[5px] h-2.5 w-2.5 rounded-full border border-accent bg-bg"
                   />
-                  <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-2">
+                  <div className="flex flex-col gap-1.5 sm:flex-row sm:flex-wrap sm:items-baseline sm:justify-between sm:gap-x-3">
                     <h3 className="text-[15px] font-medium text-text">
                       {entry.name}
                     </h3>
-                    <span className="rounded-full border border-line bg-surface/60 px-2.5 py-1 text-[11px] tracking-wide whitespace-nowrap text-muted">
+                    <span className="w-fit rounded-full border border-line bg-surface/60 px-2.5 py-1 text-[11px] tracking-wide whitespace-nowrap text-muted">
                       {entry.period}
                     </span>
                   </div>

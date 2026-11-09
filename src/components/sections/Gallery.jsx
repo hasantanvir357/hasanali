@@ -16,9 +16,14 @@ import MediaSlot from "@/components/ui/MediaSlot";
  * with an accessible lightbox: Escape / arrow keys, focus management,
  * scroll lock and safe outside-click close.
  */
-export default function Gallery() {
+export default function Gallery({
+  as = "h2",
+  index = "06",
+  headingId = "gallery-title",
+  className = "relative py-16 md:py-24",
+}) {
   const { t, lang } = useLanguage();
-  const [index, setIndex] = useState(-1);
+  const [activeIndex, setActiveIndex] = useState(-1);
   const total = gallery.length;
 
   const labels = {
@@ -30,17 +35,15 @@ export default function Gallery() {
   };
 
   return (
-    <section
-      aria-labelledby="gallery-title"
-      className="relative py-16 md:py-24"
-    >
+    <section aria-labelledby={headingId} className={className}>
       <div className="mx-auto max-w-6xl px-5">
         <SectionHeading
-          index="06"
+          index={index}
           label={t.gallery.label}
           title={t.gallery.title}
           desc={t.gallery.desc}
-          id="gallery-title"
+          id={headingId}
+          as={as}
         />
 
         <div className="columns-1 gap-5 sm:columns-2 lg:columns-3">
@@ -53,7 +56,7 @@ export default function Gallery() {
               <figure className="group relative m-0 overflow-hidden rounded-2xl border border-line bg-surface transition duration-300 hover:border-accent/45">
                 <button
                   type="button"
-                  onClick={() => setIndex(itemIndex)}
+                  onClick={() => setActiveIndex(itemIndex)}
                   data-cursor="ZOOM"
                   aria-label={`${t.gallery.open}: ${pick(item.caption, lang)}`}
                   className="block w-full"
@@ -91,10 +94,12 @@ export default function Gallery() {
 
       <Lightbox
         items={gallery}
-        index={index}
-        onClose={() => setIndex(-1)}
-        onPrev={() => setIndex((current) => (current - 1 + total) % total)}
-        onNext={() => setIndex((current) => (current + 1) % total)}
+        index={activeIndex}
+        onClose={() => setActiveIndex(-1)}
+        onPrev={() =>
+          setActiveIndex((current) => (current - 1 + total) % total)
+        }
+        onNext={() => setActiveIndex((current) => (current + 1) % total)}
         labels={labels}
       />
     </section>

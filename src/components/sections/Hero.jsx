@@ -19,7 +19,6 @@ export default function Hero() {
 
   return (
     <section
-      id="top"
       aria-labelledby="hero-title"
       className="relative overflow-hidden pt-24 pb-16 md:pt-36 md:pb-24"
     >
@@ -77,14 +76,14 @@ export default function Hero() {
 
           <div className="mt-8 flex flex-wrap items-center gap-3.5">
             <a
-              href="#work"
+              href="/work"
               className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-bg transition duration-300 hover:shadow-[0_0_38px_rgba(0,133,255,0.5)]"
             >
               {t.hero.ctaWork}
               <IconArrowRight className="h-4 w-4 transition duration-300 group-hover:translate-x-1" />
             </a>
             <a
-              href="#contact"
+              href="/contact"
               className="inline-flex items-center gap-2 rounded-full border border-line bg-surface/60 px-6 py-3.5 text-sm font-medium text-text backdrop-blur transition duration-300 hover:border-accent/60 hover:bg-accent/10"
             >
               {t.hero.ctaContact}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/components/providers/LanguageProvider";
+import { cn } from "@/lib/utils";
 
 const OPTIONS = [
   { code: "bn", label: "বাং" },
@@ -13,9 +14,12 @@ export default function LangToggle({ className = "" }) {
 
   return (
     <div
-      role="group"
+      role="radiogroup"
       aria-label={t.a11y.langSwitch}
-      className={`flex shrink-0 items-center gap-0.5 rounded-full border border-line bg-surface/70 p-1 backdrop-blur ${className}`}
+      className={cn(
+        "flex shrink-0 items-center gap-0.5 rounded-full border border-line bg-surface/70 p-1 backdrop-blur",
+        className
+      )}
     >
       {OPTIONS.map((option) => {
         const isActive = lang === option.code;
@@ -23,13 +27,15 @@ export default function LangToggle({ className = "" }) {
           <button
             key={option.code}
             type="button"
+            role="radio"
+            aria-checked={isActive}
             onClick={() => setLang(option.code)}
-            aria-pressed={isActive}
-            className={`rounded-full px-2.5 py-1 text-[11px] font-semibold tracking-wider transition duration-200 ${
+            className={cn(
+              "min-w-[2.5rem] rounded-full px-2.5 py-1 text-[11px] font-semibold tracking-wider transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-accent",
               isActive
                 ? "bg-accent text-bg shadow-[0_0_16px_rgba(0,133,255,0.45)]"
                 : "text-muted hover:text-text"
-            }`}
+            )}
           >
             {option.label}
           </button>

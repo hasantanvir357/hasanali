@@ -9,12 +9,12 @@ import {
 /**
  * Single source of truth for navigation.
  * Desktop top bar and mobile bottom bar both render from this list.
- * Home/About/Work/Contact are homepage anchors; Resources is a real route.
  */
 export const NAV_ITEMS = [
   { id: "home", href: "/", icon: IconHome },
-  { id: "about", href: "/#about", icon: IconUser },
-  { id: "work", href: "/#work", icon: IconBriefcase },
+  { id: "about", href: "/about", icon: IconUser },
+  { id: "work", href: "/work", icon: IconBriefcase },
   { id: "resources", href: "/resources", icon: IconPackage },
-  { id: "contact", href: "/#contact", icon: IconMail },
+  { id: "contact", href: "/contact", icon: IconMail },
 ];
+
